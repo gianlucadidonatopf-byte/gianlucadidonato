@@ -1,0 +1,375 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gianluca Di Donato | Pianista e Musicologo</title>
+    <style>
+        * { box-sizing: border-box; margin: 0; padding: 0; }
+        body { font-family: 'Georgia', 'Times New Roman', serif; color: #2c2c2c; background-color: #fdfbf7; line-height: 1.7; }
+        a { color: #8b0000; text-decoration: none; }
+        a:hover { color: #5c0000; text-decoration: underline; }
+        
+        header { background-color: #1a1a1a; color: #f4f4f4; position: sticky; top: 0; z-index: 1000; box-shadow: 0 2px 10px rgba(0,0,0,0.3); }
+        .nav-container { max-width: 1100px; margin: 0 auto; display: flex; justify-content: space-between; align-items: center; padding: 1rem 2rem; }
+        .logo { font-size: 1.5rem; font-weight: bold; letter-spacing: 1px; text-transform: uppercase; }
+        nav ul { display: flex; list-style: none; gap: 2rem; }
+        nav a { color: #dcdcdc; font-size: 0.95rem; text-transform: uppercase; letter-spacing: 1px; font-family: sans-serif; text-decoration: none; }
+        nav a:hover { color: #d4af37; text-decoration: none; }
+
+        section { padding: 4rem 2rem; max-width: 1100px; margin: 0 auto; border-bottom: 1px solid #e5e0d8; }
+        h2 { font-size: 2.2rem; margin-bottom: 2rem; text-align: center; color: #1a1a1a; }
+        h2::after { content: ''; display: block; width: 50px; height: 2px; background-color: #8b0000; margin: 0.8rem auto 0; }
+
+        .bio-container { display: grid; grid-template-columns: 280px 1fr; gap: 2.5rem; align-items: start; }
+        .bio-img { width: 100%; border-radius: 4px; box-shadow: 0 4px 15px rgba(0,0,0,0.15); position: sticky; top: 90px; }
+        .bio-text p { margin-bottom: 1.2rem; font-size: 1.05rem; text-align: justify; }
+
+        .agenda-list { display: flex; flex-direction: column; gap: 1.2rem; }
+        .agenda-item { background: #fff; padding: 1.2rem 1.5rem; border-left: 4px solid #8b0000; box-shadow: 0 2px 8px rgba(0,0,0,0.05); display: grid; grid-template-columns: 80px 1fr; gap: 1.5rem; align-items: start; }
+        .agenda-date { font-family: sans-serif; font-weight: bold; color: #8b0000; font-size: 1.1rem; }
+        .agenda-details h3 { font-size: 1.15rem; color: #1a1a1a; margin-bottom: 0.3rem; }
+        .agenda-details p { font-size: 0.95rem; color: #444; }
+        .agenda-program { font-size: 0.88rem; color: #666; margin-top: 0.4rem; font-style: italic; }
+
+        .pub-grid { display: flex; flex-direction: column; gap: 2rem; }
+        .pub-card { display: grid; grid-template-columns: 160px 1fr; gap: 2rem; background: #fff; padding: 1.5rem; border-radius: 6px; box-shadow: 0 3px 10px rgba(0,0,0,0.06); align-items: center; }
+        .pub-card img { width: 100%; max-height: 240px; object-fit: contain; }
+        .pub-info h3 { font-size: 1.25rem; margin-bottom: 0.5rem; color: #1a1a1a; }
+        .pub-meta { font-family: sans-serif; font-size: 0.9rem; color: #555; margin-bottom: 0.5rem; }
+        .pub-meta span { margin-right: 15px; }
+        .badge-cd { background: #8b0000; color: #fff; padding: 2px 6px; font-size: 0.75rem; border-radius: 3px; font-family: sans-serif; display: inline-block; margin-bottom: 6px; }
+
+        .gallery-text { text-align: center; color: #666; font-style: italic; }
+
+        .contact-container { text-align: center; font-size: 1.1rem; line-height: 2; }
+        .social-links { margin-top: 1.5rem; display: flex; justify-content: center; gap: 1.5rem; }
+        .social-links a { background: #1a1a1a; color: #fff; padding: 0.6rem 1.2rem; border-radius: 4px; font-family: sans-serif; font-size: 0.9rem; transition: background 0.3s; text-decoration: none; }
+        .social-links a:hover { background: #8b0000; color: #fff; }
+
+        footer { background: #1a1a1a; color: #888; text-align: center; padding: 2rem; font-family: sans-serif; font-size: 0.85rem; }
+        footer a { color: #d4af37; }
+
+        @media (max-width: 768px) {
+            .nav-container { flex-direction: column; gap: 1rem; }
+            .bio-container, .pub-card, .agenda-item { grid-template-columns: 1fr; text-align: left; }
+            .bio-img { position: static; max-width: 250px; margin: 0 auto 1.5rem; display: block; }
+            .pub-card img { margin: 0 auto; max-width: 160px; }
+            .social-links { flex-direction: column; align-items: center; }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="nav-container">
+            <div class="logo">Gianluca Di Donato</div>
+            <nav>
+                <ul>
+                    <li><a href="#biografia">Biografia</a></li>
+                    <li><a href="#agenda">Agenda</a></li>
+                    <li><a href="#pubblicazioni">Pubblicazioni</a></li>
+                    <li><a href="#photo">Photo</a></li>
+                    <li><a href="#contatti">Contatti</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <section id="biografia">
+        <h2>Biografia</h2>
+        <div class="bio-container">
+            <img src="foto-profilo.jpg" alt="Gianluca Di Donato" class="bio-img">
+            <div class="bio-text">
+                <p>Nato ad Avellino nel 1972, Gianluca Di Donato è allievo di Aldo Ciccolini e tiene concerti in tutta Europa dal 1991. Riconosciuto come uno dei principali interpreti italiani di Franz Schubert, è stato il primo pianista italiano ad eseguire dal vivo l'integrale della produzione pianistica del compositore viennese. Laureato in Lettere Moderne e Filosofia presso l'Università di Fisciano, ha conseguito anche la laurea in Musicologia alla Sapienza di Roma e la specializzazione in sostegno didattico all'Università di Foggia. Nel corso della sua carriera ha ricevuto diversi riconoscimenti per la sua attività di concertista e musicologo.</p>
+
+                <p>Dal 2013 al 2016 ha realizzato il Progetto Mozart, eseguendo l'integrale della produzione per e con pianoforte del salisburghese, attività che gli è valsa il Premio Sublimitas nel 2013. Dal 2015 al 2017 ha eseguito, per la seconda volta, il ciclo integrale delle sonate per pianoforte di Schubert, per GOG di Genova, Amici della Musica di Ferrara, Ravello Concert Society, e Concerti Unitus di Viterbo.</p>
+
+                <p>La sua attività saggistica comprende <em>Addio al piano - Gli ultimi quattro cicli pianistici di Johannes Brahms</em> (2019), <em>Il riscatto del genio - Mozart nel 1784</em> (2020) e <em>Johannes Kreisler Junior - Amori e amicizie del giovane Brahms</em> (Florestano, 2022). Nel 2023 ha contribuito al volume <em>Discorsi sulla bellezza</em> con il saggio <em>Il concetto di bello nella storia della musica</em>. Dal 2020 fa parte dello staff scientifico di lvbeethoven.it e dal 2022 è redattore del sito di musicologia Quinte Parallele. Tra il 2021 e il 2023 ha ideato e condotto la rubrica <em>Lezioni di musica</em> su Radio Mozart Italia.</p>
+
+                <p>Un progetto particolarmente significativo, avviato nel maggio 2022, è stata l'esecuzione in prima mondiale delle Sinfonie di Schubert nella trascrizione per pianoforte di Jan Brandts Buys, revisionata dallo stesso Di Donato, eseguita a Trapani e Calatafimi per la MEMA. Nel luglio 2024 la Florestano Edizioni ha pubblicato il primo di tre volumi dedicati alla liederistica con pianoforte della Seconda Scuola di Vienna, incentrato su Arnold Schönberg. Ad ottobre 2025 è uscito il secondo volume, dedicato ad Anton Webern.</p>
+
+                <p>A febbraio 2026 ha intrapreso insieme al soprano Barbara Costa, con la quale forma il duo DAS LIED, l'esecuzione integrale, per la prima volta in Italia della produzione liederistica con pianoforte della Seconda Scuola di Vienna per la Società del Quartetto di Bergamo. Sempre in duo, debutterà il prossimo 23 novembre al Musikverein di Vienna. A maggio 2026 è uscito il suo primo libro di narrativa, sempre per la Florestano, <em>Kinderszenen. Lontano ma non troppo</em>. A fine agosto uscirà per la Stradivarius il primo cd dell'integrale della liederistica di Alban Berg, che sarà anche l'oggetto della nuova pubblicazione editoriale, a dicembre, che chiuderà la trilogia intrapresa nel luglio 2024. Parallelamente svolge un'intensa attività come musicologo che lo porta a tenere conferenze e relazioni in contesti prestigiosi, come il Festival Luigi Nono e Il saggiatore musicale di Bologna.</p>
+
+                <p>Inoltre, dal 2026 collaborerà per quattro anni, in qualità di consulente scientifico per la musicologia, con il Dipartimento di Filosofia, Sociologia, Pedagogia e Psicologia Applicata (FISPPA) dell'Università degli Studi di Padova per l'Unità di Progetto CISSE, Centro Studi Interdisciplinare sugli Stati Emotivi.</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="agenda">
+        <h2>Agenda 2025 / 2026</h2>
+        <div class="agenda-list">
+
+            <div class="agenda-item">
+                <div class="agenda-date">20/11</div>
+                <div class="agenda-details">
+                    <h3>Venezia – Festival Luigi Nono</h3>
+                    <p><strong>Lecture:</strong> L'utopia del Wanderer. Fragment, silence and listening in Luigi Nono's music</p>
+                </div>
+            </div>
+
+            <div class="agenda-item">
+                <div class="agenda-date">22/11</div>
+                <div class="agenda-details">
+                    <h3>Genova – Associazione Anfossi</h3>
+                    <p><strong>Presentazione Libro e Concerto Duo DAS LIED</strong></p>
+                    <p>Presentazione: <em>La liederistica con pianoforte della seconda scuola di Vienna, Vol. 2. Anton Webern</em></p>
+                    <p class="agenda-program">Programma: Schönberg (Lieder op. 1), Wagner (Wesendonck Lieder), Brahms (Klavierstücke op. 119), Berg (Sieben frühe Lieder)</p>
+                </div>
+            </div>
+
+            <div class="agenda-item">
+                <div class="agenda-date">23/11</div>
+                <div class="agenda-details">
+                    <h3>Bologna – Saggiatore Musicale</h3>
+                    <p><strong>Lecture:</strong> Due occhi, due epoche. Alban Berg and the Lied <em>Schliesse mir die Augen beide</em></p>
+                </div>
+            </div>
+
+            <div class="agenda-item">
+                <div class="agenda-date">23/01</div>
+                <div class="agenda-details">
+                    <h3>Mariano Comense – Teatro San Carlo</h3>
+                    <p><strong>Presentazione Libro e Concerto Duo DAS LIED</strong></p>
+                    <p>Presentazione: <em>Vol. 2 Anton Webern</em></p>
+                    <p class="agenda-program">Programma: Schönberg (Lieder op. 1), Webern (Lieder op. 3), Berg (Sonata op. 1 & Sieben frühe Lieder)</p>
+                </div>
+            </div>
+
+            <div class="agenda-item">
+                <div class="agenda-date">26/01</div>
+                <div class="agenda-details">
+                    <h3>Roma – Sincronia Musica (Sala Baldini)</h3>
+                    <p><strong>Presentazione Libro e Concerto Duo DAS LIED</strong></p>
+                    <p>Presentazione: <em>Vol. 1 Arnold Schönberg</em></p>
+                    <p class="agenda-program">Programma: Schönberg (Lieder op. 1), Wagner (Wesendonck Lieder), Brahms (Fantasien op. 116), Berg (Sieben frühe Lieder)</p>
+                </div>
+            </div>
+
+            <div class="agenda-item">
+                <div class="agenda-date">06/02</div>
+                <div class="agenda-details">
+                    <h3>Milano – Villa Litta</h3>
+                    <p><strong>Presentazione Libro e Concerto Duo DAS LIED</strong></p>
+                    <p>Presentazione: <em>Vol. 2 Anton Webern</em></p>
+                    <p class="agenda-program">Programma: Schönberg (Lieder op. 1), Webern (Lieder op. 3), Brahms (Fantasien op. 116), Berg (Sieben frühe Lieder)</p>
+                </div>
+            </div>
+
+            <div class="agenda-item">
+                <div class="agenda-date">07/02</div>
+                <div class="agenda-details">
+                    <h3>Bergamo – Società del Quartetto (Sala Piatti)</h3>
+                    <p><strong>Concerto Duo DAS LIED</strong> – Complete Lieder of the Second Viennese School (1st concert)</p>
+                    <p class="agenda-program">Programma: Schönberg (Lieder op. 1), Webern (Lieder op. 3), Brahms (Fantasien op. 116), Berg (Sieben frühe Lieder)</p>
+                </div>
+            </div>
+
+            <div class="agenda-item">
+                <div class="agenda-date">08/02</div>
+                <div class="agenda-details">
+                    <h3>Bergamo</h3>
+                    <p><strong>Presentazione Libro & Lecture</strong></p>
+                    <p>Presentazione <em>Vol. 1 - Arnold Schönberg</em> | Lecture: <em>The evolution of the Lied from Schubert to Webern (Part One)</em></p>
+                </div>
+            </div>
+
+            <div class="agenda-item">
+                <div class="agenda-date">28/02</div>
+                <div class="agenda-details">
+                    <h3>Calatafimi – M.E.M.A.</h3>
+                    <p><strong>Recital Pianistico:</strong> <em>IL MONDO DI IERI</em></p>
+                    <p class="agenda-program">Programma: Berg (Sonata op. 1), Schubert/Buys (Symphony No. 8 D.759), Brahms (Klavierstücke op. 119)</p>
+                </div>
+            </div>
+
+            <div class="agenda-item">
+                <div class="agenda-date">01/03</div>
+                <div class="agenda-details">
+                    <h3>Trapani – M.E.M.A. (Chiesa di Sant'Alberto)</h3>
+                    <p><strong>Recital:</strong> Complete Schubert Symphonies (Buys transcription - World Premiere - 4th concert)</p>
+                    <p class="agenda-program">Programma: Symphony No. 8 D. 759, Symphony No. 9 D. 944 "The Great"</p>
+                </div>
+            </div>
+
+            <div class="agenda-item">
+                <div class="agenda-date">20/03</div>
+                <div class="agenda-details">
+                    <h3>Bergamo – Società del Quartetto (Sala Piatti)</h3>
+                    <p><strong>Concerto Duo DAS LIED</strong> – Complete Lieder of the Second Viennese School (2nd concert)</p>
+                    <p class="agenda-program">Programma: Schönberg (Lieder op. 48), Brahms (Intermezzi op. 117 & Klavierstücke op. 119), Berg (Vier Lieder op. 2), Webern (Eight Early Songs)</p>
+                </div>
+            </div>
+
+            <div class="agenda-item">
+                <div class="agenda-date">21/03</div>
+                <div class="agenda-details">
+                    <h3>Bergamo</h3>
+                    <p><strong>Presentazione Libro & Lecture</strong></p>
+                    <p>Presentazione <em>Vol. 2 - Anton Webern</em> | Lecture: <em>The evolution of the Lied from Schubert to Webern (Part Two)</em></p>
+                </div>
+            </div>
+
+            <div class="agenda-item">
+                <div class="agenda-date">22/03</div>
+                <div class="agenda-details">
+                    <h3>Torino – Auditorium San Filippo Neri</h3>
+                    <p><strong>Presentazione Libro e Concerto Duo DAS LIED</strong></p>
+                    <p>Presentazione: <em>Vol. 2 Anton Webern</em></p>
+                    <p class="agenda-program">Programma: Webern (Eight Early Songs), Wagner (Wesendonck Lieder), Brahms (Klavierstücke op. 119), Berg (Sieben frühe Lieder)</p>
+                </div>
+            </div>
+
+            <div class="agenda-item">
+                <div class="agenda-date">18/04</div>
+                <div class="agenda-details">
+                    <h3>Maccagno (VA)</h3>
+                    <p><strong>Presentazione Libro & Recital</strong></p>
+                    <p>Presentazione <em>Vol. 2 Anton Webern</em></p>
+                    <p class="agenda-program">Programma: A. Berg (Sonata op. 1), A. Webern (Kinderstücke 1924, Klavierstücke 1926), J. Brahms (Klavierstücke op. 119)</p>
+                </div>
+            </div>
+
+            <div class="agenda-item">
+                <div class="agenda-date">19/04</div>
+                <div class="agenda-details">
+                    <h3>Mariano Comense</h3>
+                    <p><strong>Concerto Duo DAS LIED</strong></p>
+                    <p class="agenda-program">Programma: Alban Berg (Jugendlieder I, Piano Sonata op. 1, Sieben Frühe Lieder)</p>
+                </div>
+            </div>
+
+            <div class="agenda-item">
+                <div class="agenda-date">12-13/06</div>
+                <div class="agenda-details">
+                    <h3>Milano – Officina 440</h3>
+                    <p><strong>Recording Album:</strong> Alban Berg Lieder I vol. (Barbara Costa soprano, Gianluca Di Donato pianoforte)</p>
+                </div>
+            </div>
+
+            <div class="agenda-item">
+                <div class="agenda-date">20/09</div>
+                <div class="agenda-details">
+                    <h3>Capua – Museo Archeologico</h3>
+                    <p><strong>Duo con Simone Randazzo (clarinetto)</strong></p>
+                    <p class="agenda-program">Programma: R. Schumann (Phantasiestücke op. 73), J. Sibelius (Piano pieces op. 75/76 sel.), F. Poulenc (Clarinet Sonata)</p>
+                </div>
+            </div>
+
+            <div class="agenda-item">
+                <div class="agenda-date">21/11</div>
+                <div class="agenda-details">
+                    <h3>Bologna – XXX Colloqui di musicologia</h3>
+                    <p><strong>Relatore:</strong> <em>Una sola volta, e per sempre. Il Manifesto del 1860 come crocevia biografico, estetico e politico nel giovane Brahms</em></p>
+                </div>
+            </div>
+
+            <div class="agenda-item">
+                <div class="agenda-date">23/11</div>
+                <div class="agenda-details">
+                    <h3>Wien – Musikverein (Brahms Saal)</h3>
+                    <p><strong>Concerto Duo DAS LIED</strong></p>
+                    <p class="agenda-program">Programma: J. Brahms (Intermezzi op. 117 & Klavierstücke op. 119), A. Schönberg (Gesänge op. 1), A. Berg (Sonata op. 1, Vier Lieder op. 2, Sieben frühe Lieder), A. Webern (George Lieder op. 3)</p>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <section id="pubblicazioni">
+        <h2>Pubblicazioni</h2>
+        <div class="pub-grid">
+
+            <div class="pub-card">
+                <img src="addio-al-piano.jpg" alt="Addio al piano">
+                <div class="pub-info">
+                    <h3>Addio al piano. Gli ultimi quattro cicli pianistici di Johannes Brahms</h3>
+                    <div class="pub-meta"><span><strong>Casa Editrice:</strong> Youcanprint</span><span><strong>Anno:</strong> 2019</span></div>
+                </div>
+            </div>
+
+            <div class="pub-card">
+                <img src="riscatto-genio.jpg" alt="Il riscatto del genio">
+                <div class="pub-info">
+                    <h3>Il riscatto del genio – Mozart nel 1784</h3>
+                    <div class="pub-meta"><span><strong>Casa Editrice:</strong> Youcanprint</span><span><strong>Anno:</strong> 2020</span></div>
+                </div>
+            </div>
+
+            <div class="pub-card">
+                <img src="kreisler.jpg" alt="Johannes Kreisler Junior">
+                <div class="pub-info">
+                    <h3>Johannes Kreisler Junior – Amori e amicizie del giovane Brahms</h3>
+                    <div class="pub-meta"><span><strong>Casa Editrice:</strong> Florestano Edizioni</span><span><strong>Anno:</strong> 2022</span></div>
+                </div>
+            </div>
+
+            <div class="pub-card">
+                <img src="schoenberg.jpg" alt="Seconda Scuola di Vienna Vol. 1 Schönberg">
+                <div class="pub-info">
+                    <h3>La liederistica con pianoforte della Seconda Scuola di Vienna. Vol. 1 Arnold Schönberg</h3>
+                    <div class="pub-meta"><span><strong>Casa Editrice:</strong> Florestano Edizioni</span><span><strong>Anno:</strong> 2024</span></div>
+                </div>
+            </div>
+
+            <div class="pub-card">
+                <img src="webern.jpg" alt="Seconda Scuola di Vienna Vol. 2 Webern">
+                <div class="pub-info">
+                    <h3>La liederistica con pianoforte della Seconda Scuola di Vienna. Vol. 2 Anton Webern</h3>
+                    <div class="pub-meta"><span><strong>Casa Editrice:</strong> Florestano Edizioni</span><span><strong>Anno:</strong> 2025</span></div>
+                </div>
+            </div>
+
+            <div class="pub-card">
+                <img src="berg-libro.jpg" alt="Seconda Scuola di Vienna Vol. 3 Berg">
+                <div class="pub-info">
+                    <h3>La liederistica con pianoforte della Seconda Scuola di Vienna. Vol. 3 Alban Berg</h3>
+                    <div class="pub-meta"><span><strong>Casa Editrice:</strong> Florestano Edizioni</span><span><strong>Anno:</strong> 2026 (in uscita a dicembre)</span></div>
+                </div>
+            </div>
+
+            <div class="pub-card">
+                <img src="kinderszenen.jpg" alt="Kinderszenen">
+                <div class="pub-info">
+                    <h3>Kinderszenen. Lontano ma non troppo</h3>
+                    <div class="pub-meta"><span><strong>Casa Editrice:</strong> Florestano Edizioni (narrativa)</span><span><strong>Anno:</strong> 2026</span></div>
+                </div>
+            </div>
+
+            <div class="pub-card">
+                <img src="berg-cd.jpg" alt="Alban Berg CD">
+                <div class="pub-info">
+                    <span class="badge-cd">CD Discografico</span>
+                    <h3>Alban Berg – Sämtliche Lieder Vol. 1 / Complete Songs Vol. 1</h3>
+                    <div class="pub-meta"><span><strong>Etichetta:</strong> Stradivarius</span><span><strong>Anno:</strong> 2026</span></div>
+                    <p>Duo DAS LIED (Barbara Costa soprano, Gianluca Di Donato pianoforte)</p>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <section id="photo">
+        <h2>Photo</h2>
+        <p class="gallery-text">Sezione fotografica in aggiornamento.</p>
+    </section>
+
+    <section id="contatti">
+        <h2>Contatti</h2>
+        <div class="contact-container">
+            <p><strong>Email:</strong> <a href="mailto:gianluca.didonatopf@gmail.com">gianluca.didonatopf@gmail.com</a></p>
+            <p><strong>Duo DAS LIED:</strong> <a href="mailto:dasliedduo@gmail.com">dasliedduo@gmail.com</a></p>
+            
+            <div class="social-links">
+                <a href="https://www.youtube.com/@bosendorfer1991/videos" target="_blank" rel="noopener">Canale YouTube</a>
+                <a href="https://www.facebook.com/gianlucadidonato72" target="_blank" rel="noopener">Profilo Facebook</a>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <p>&copy; 2026 Gianluca Di Donato. Tutti i diritti riservati.</p>
+    </footer>
+
+</body>
+</html>
