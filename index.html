@@ -89,18 +89,14 @@
         .hero h1 { font-family: 'EB Garamond', 'Garamond', 'Georgia', serif; font-weight: 400; font-size: clamp(3.6rem, 10.5vw, 9.2rem); line-height: 0.92; letter-spacing: -0.01em; color: #fbf7ef; text-shadow: 0 2px 30px rgba(0,0,0,0.45); }
         .hero h1 span { display: block; }
         .hero h1 span + span { padding-left: 0.12em; }
-        .hero-rule { width: 84px; height: 2px; background: #8b0000; margin: 2.2rem 0 1.6rem; box-shadow: 0 0 0 1px rgba(212,175,55,0.0); }
-        .hero-sub { font-family: 'EB Garamond', 'Georgia', serif; font-size: clamp(1.15rem, 2vw, 1.5rem); font-style: italic; color: #e6dccb; max-width: 30ch; line-height: 1.45; }
-        .hero-links { margin-top: 2.4rem; display: flex; flex-wrap: wrap; gap: 0.8rem; }
+        .hero-rule { width: 84px; height: 2px; background: #8b0000; margin: 2.2rem 0 0; box-shadow: 0 0 0 1px rgba(212,175,55,0.0); }
+        .hero-links { margin-top: 2rem; display: flex; flex-wrap: wrap; gap: 0.8rem; }
         .hero-links a { font-family: sans-serif; font-size: 0.8rem; letter-spacing: 0.18em; text-transform: uppercase; color: #f3ede2; border: 1px solid rgba(243,237,226,0.45); padding: 0.75rem 1.4rem; border-radius: 2px; text-decoration: none; transition: background 0.25s, color 0.25s, border-color 0.25s; backdrop-filter: blur(2px); }
         .hero-links a:hover { background: #d4af37; border-color: #d4af37; color: #1a1a1a; text-decoration: none; }
-        .hero-links a.primary { background: #8b0000; border-color: #8b0000; }
-        .hero-links a.primary:hover { background: #d4af37; border-color: #d4af37; }
         .hero-text > * { animation: rise 0.9s cubic-bezier(.2,.7,.2,1) both; }
         .hero-text > *:nth-child(2) { animation-delay: 0.12s; }
         .hero-text > *:nth-child(3) { animation-delay: 0.26s; }
         .hero-text > *:nth-child(4) { animation-delay: 0.38s; }
-        .hero-text > *:nth-child(5) { animation-delay: 0.5s; }
         @keyframes rise { from { opacity: 0; transform: translateY(18px); } to { opacity: 1; transform: none; } }
         @media (prefers-reduced-motion: reduce) { .hero-text > * { animation: none; } html { scroll-behavior: auto; } }
         @media (max-width: 900px) {
@@ -108,8 +104,7 @@
             .hero::after { display: none; }
             .hero-photo { position: relative; width: 100%; height: min(112vw, 560px); background-position: 50% 0%; -webkit-mask-image: linear-gradient(to bottom, #000 0%, #000 58%, transparent 100%); mask-image: linear-gradient(to bottom, #000 0%, #000 58%, transparent 100%); }
             .hero-text { margin-top: -3.2rem; padding: 0 1.4rem 2.8rem; }
-            .hero-sub { max-width: 34ch; }
-        }
+            }
 
         @media (max-width: 1060px) {
             .nav-container { flex-direction: column; gap: 0.8rem; }
@@ -148,11 +143,9 @@
             <p class="hero-kicker">Pianista · Musicologo</p>
             <h1><span>Gianluca</span><span>Di Donato</span></h1>
             <div class="hero-rule"></div>
-            <p class="hero-sub">Interprete di Schubert e della Seconda Scuola di Vienna</p>
             <div class="hero-links">
-                <a class="primary" href="#agenda">Agenda</a>
-                <a href="#pubblicazioni">Pubblicazioni</a>
-                <a href="scritti-e-articoli.html">Scritti e articoli</a>
+                <a href="https://www.facebook.com/gianlucadidonato72" target="_blank" rel="noopener">Facebook</a>
+                <a href="https://www.instagram.com/gianlucadidonato72/" target="_blank" rel="noopener">Instagram</a>
             </div>
         </div>
     </div>
