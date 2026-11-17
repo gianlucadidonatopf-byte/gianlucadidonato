@@ -75,6 +75,14 @@
         .social-links a { background: #1a1a1a; color: #fff; padding: 0.6rem 1.2rem; border-radius: 4px; font-family: sans-serif; font-size: 0.9rem; transition: background 0.3s; text-decoration: none; }
         .social-links a:hover { background: #8b0000; color: #fff; }
 
+
+        /* Carta: grana sottilissima e due toni alternati */
+        body { background-color: #f8f3ea; background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='240' height='240'%3E%3Cfilter id='n' x='0' y='0' width='100%25' height='100%25'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.8' numOctaves='3' stitchTiles='stitch'/%3E%3CfeColorMatrix values='0 0 0 0 .42 0 0 0 0 .32 0 0 0 0 .2 0 0 0 .16 0'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E"); }
+        section.alt { background-color: rgba(120, 90, 50, 0.045); box-shadow: 0 0 0 100vmax rgba(120, 90, 50, 0.045); clip-path: inset(0 -100vmax); }
+        section { border-bottom: none; position: relative; }
+        section::before { content: ''; display: block; width: min(360px, 60%); height: 7px; margin: -2.2rem auto 2.4rem; border-top: 1px solid rgba(139,0,0,0.28); border-bottom: 1px solid rgba(139,0,0,0.28); }
+        #biografia::before { display: none; }
+
         footer { background: #1a1a1a; color: #888; text-align: center; padding: 2rem; font-family: sans-serif; font-size: 0.85rem; }
 
 
@@ -174,7 +182,7 @@
         </div>
     </section>
 
-    <section id="agenda">
+    <section id="agenda" class="alt">
         <h2>Agenda 2025 / 2027</h2>
         <div class="agenda-list">
 
@@ -552,7 +560,7 @@
         </div>
     </section>
 
-    <section id="photo">
+    <section id="photo" class="alt">
         <h2>Photo</h2>
         <div class="gallery">
             <a href="foto-01.jpg"><img src="foto-01.jpg" alt="Gianluca Di Donato" loading="lazy"></a>
