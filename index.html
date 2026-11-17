@@ -22,14 +22,16 @@
     </script>
     <title>Gianluca Di Donato | Pianista e Musicologo</title>
     <style>
+        @import url('https://fonts.googleapis.com/css2?family=EB+Garamond:wght@400;500&display=swap');
         * { box-sizing: border-box; margin: 0; padding: 0; }
         body { font-family: 'Georgia', 'Times New Roman', serif; color: #2c2c2c; background-color: #fdfbf7; line-height: 1.7; }
         a { color: #8b0000; text-decoration: none; }
         a:hover { color: #5c0000; text-decoration: underline; }
+        .logo:hover { color: #d4af37; text-decoration: none; }
         
         header { background-color: #1a1a1a; color: #f4f4f4; position: sticky; top: 0; z-index: 1000; box-shadow: 0 2px 10px rgba(0,0,0,0.3); }
         .nav-container { max-width: 1100px; margin: 0 auto; display: flex; justify-content: space-between; align-items: center; padding: 1rem 2rem; }
-        .logo { font-size: 1.3rem; font-weight: bold; letter-spacing: 1px; text-transform: uppercase; white-space: nowrap; }
+        .logo { color: #f4f4f4; font-size: 1.3rem; font-weight: bold; letter-spacing: 1px; text-transform: uppercase; white-space: nowrap; }
         nav ul { display: flex; list-style: none; gap: 1.6rem; }
         nav a { white-space: nowrap; color: #dcdcdc; font-size: 0.88rem; text-transform: uppercase; letter-spacing: 1px; font-family: sans-serif; text-decoration: none; }
         nav a:hover { color: #d4af37; text-decoration: none; }
@@ -38,8 +40,7 @@
         h2 { font-size: 2.2rem; margin-bottom: 2rem; text-align: center; color: #1a1a1a; }
         h2::after { content: ''; display: block; width: 50px; height: 2px; background-color: #8b0000; margin: 0.8rem auto 0; }
 
-        .bio-container { display: grid; grid-template-columns: 280px 1fr; gap: 2.5rem; align-items: start; }
-        .bio-img { width: 100%; border-radius: 4px; box-shadow: 0 4px 15px rgba(0,0,0,0.15); position: sticky; top: 90px; }
+        .bio-container { max-width: 800px; margin: 0 auto; }
         .bio-text p { margin-bottom: 1.2rem; font-size: 1.05rem; text-align: justify; }
 
         .agenda-list { display: flex; flex-direction: column; gap: 1.2rem; }
@@ -76,6 +77,40 @@
 
         footer { background: #1a1a1a; color: #888; text-align: center; padding: 2rem; font-family: sans-serif; font-size: 0.85rem; }
 
+
+        /* Home */
+        html { scroll-behavior: smooth; }
+        section[id], .hero { scroll-margin-top: 70px; }
+        .hero { position: relative; overflow: hidden; background: #15120f; color: #f3ede2; min-height: calc(100vh - 68px); min-height: calc(100svh - 68px); display: flex; align-items: center; }
+        .hero-photo { position: absolute; top: 0; right: 0; bottom: 0; width: 62%; background: url('hero-gianluca.jpg') 50% 0% / cover no-repeat; -webkit-mask-image: linear-gradient(to right, transparent 0%, rgba(0,0,0,0.55) 22%, #000 52%); mask-image: linear-gradient(to right, transparent 0%, rgba(0,0,0,0.55) 22%, #000 52%); }
+        .hero::after { content: ''; position: absolute; inset: 0; background: radial-gradient(ellipse at 78% 38%, rgba(0,0,0,0) 35%, rgba(10,8,6,0.55) 100%), linear-gradient(to top, rgba(10,8,6,0.55) 0%, rgba(10,8,6,0) 28%); pointer-events: none; }
+        .hero-text { position: relative; z-index: 2; width: 100%; max-width: 1100px; margin: 0 auto; padding: 4rem 2rem; }
+        .hero-kicker { font-family: sans-serif; font-size: 0.82rem; letter-spacing: 0.32em; text-transform: uppercase; color: #d4af37; margin-bottom: 1.6rem; }
+        .hero h1 { font-family: 'EB Garamond', 'Garamond', 'Georgia', serif; font-weight: 400; font-size: clamp(3.6rem, 10.5vw, 9.2rem); line-height: 0.92; letter-spacing: -0.01em; color: #fbf7ef; text-shadow: 0 2px 30px rgba(0,0,0,0.45); }
+        .hero h1 span { display: block; }
+        .hero h1 span + span { padding-left: 0.12em; }
+        .hero-rule { width: 84px; height: 2px; background: #8b0000; margin: 2.2rem 0 1.6rem; box-shadow: 0 0 0 1px rgba(212,175,55,0.0); }
+        .hero-sub { font-family: 'EB Garamond', 'Georgia', serif; font-size: clamp(1.15rem, 2vw, 1.5rem); font-style: italic; color: #e6dccb; max-width: 30ch; line-height: 1.45; }
+        .hero-links { margin-top: 2.4rem; display: flex; flex-wrap: wrap; gap: 0.8rem; }
+        .hero-links a { font-family: sans-serif; font-size: 0.8rem; letter-spacing: 0.18em; text-transform: uppercase; color: #f3ede2; border: 1px solid rgba(243,237,226,0.45); padding: 0.75rem 1.4rem; border-radius: 2px; text-decoration: none; transition: background 0.25s, color 0.25s, border-color 0.25s; backdrop-filter: blur(2px); }
+        .hero-links a:hover { background: #d4af37; border-color: #d4af37; color: #1a1a1a; text-decoration: none; }
+        .hero-links a.primary { background: #8b0000; border-color: #8b0000; }
+        .hero-links a.primary:hover { background: #d4af37; border-color: #d4af37; }
+        .hero-text > * { animation: rise 0.9s cubic-bezier(.2,.7,.2,1) both; }
+        .hero-text > *:nth-child(2) { animation-delay: 0.12s; }
+        .hero-text > *:nth-child(3) { animation-delay: 0.26s; }
+        .hero-text > *:nth-child(4) { animation-delay: 0.38s; }
+        .hero-text > *:nth-child(5) { animation-delay: 0.5s; }
+        @keyframes rise { from { opacity: 0; transform: translateY(18px); } to { opacity: 1; transform: none; } }
+        @media (prefers-reduced-motion: reduce) { .hero-text > * { animation: none; } html { scroll-behavior: auto; } }
+        @media (max-width: 900px) {
+            .hero { display: block; min-height: 0; }
+            .hero::after { display: none; }
+            .hero-photo { position: relative; width: 100%; height: min(112vw, 560px); background-position: 50% 0%; -webkit-mask-image: linear-gradient(to bottom, #000 0%, #000 58%, transparent 100%); mask-image: linear-gradient(to bottom, #000 0%, #000 58%, transparent 100%); }
+            .hero-text { margin-top: -3.2rem; padding: 0 1.4rem 2.8rem; }
+            .hero-sub { max-width: 34ch; }
+        }
+
         @media (max-width: 1060px) {
             .nav-container { flex-direction: column; gap: 0.8rem; }
         }
@@ -83,8 +118,7 @@
         @media (max-width: 768px) {
             .nav-container { flex-direction: column; gap: 1rem; }
             nav ul { flex-wrap: wrap; justify-content: center; gap: 0.6rem 1.2rem; }
-            .bio-container, .pub-card, .agenda-item { grid-template-columns: 1fr; text-align: left; }
-            .bio-img { position: static; max-width: 250px; margin: 0 auto 1.5rem; display: block; }
+            .pub-card, .agenda-item { grid-template-columns: 1fr; text-align: left; }
             .pub-card img { margin: 0 auto; max-width: 160px; }
             .social-links { flex-direction: column; align-items: center; }
         }
@@ -94,7 +128,7 @@
 
     <header>
         <div class="nav-container">
-            <h1 class="logo" style="margin:0">Gianluca Di Donato</h1>
+            <a href="#home" class="logo" style="margin:0">Gianluca Di Donato</a>
             <nav>
                 <ul>
                     <li><a href="#biografia">Biografia</a></li>
@@ -108,10 +142,24 @@
         </div>
     </header>
 
+    <div class="hero" id="home">
+        <div class="hero-photo" role="img" aria-label="Gianluca Di Donato"></div>
+        <div class="hero-text">
+            <p class="hero-kicker">Pianista · Musicologo</p>
+            <h1><span>Gianluca</span><span>Di Donato</span></h1>
+            <div class="hero-rule"></div>
+            <p class="hero-sub">Interprete di Schubert e della Seconda Scuola di Vienna</p>
+            <div class="hero-links">
+                <a class="primary" href="#agenda">Agenda</a>
+                <a href="#pubblicazioni">Pubblicazioni</a>
+                <a href="scritti-e-articoli.html">Scritti e articoli</a>
+            </div>
+        </div>
+    </div>
+
     <section id="biografia">
         <h2>Biografia</h2>
         <div class="bio-container">
-            <img src="foto-profilo.jpg" alt="Gianluca Di Donato" class="bio-img">
             <div class="bio-text">
                 <p>Nato ad Avellino nel 1972, Gianluca Di Donato è allievo di Aldo Ciccolini e tiene concerti in tutta Europa dal 1991. Riconosciuto come uno dei principali interpreti italiani di Franz Schubert, è stato il primo pianista italiano ad eseguire dal vivo l'integrale della produzione pianistica del compositore viennese. Laureato in Lettere Moderne e Filosofia presso l'Università di Salerno, ha conseguito anche la laurea in Musicologia alla Sapienza di Roma e la specializzazione in sostegno didattico all'Università di Foggia. Nel corso della sua carriera ha ricevuto diversi riconoscimenti per la sua attività di concertista e musicologo.</p>
 
